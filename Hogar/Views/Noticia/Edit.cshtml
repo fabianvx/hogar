@@ -1,0 +1,190 @@
+﻿@model Hogar.Application.DTOs.NoticiaDTO
+
+@{
+    ViewData["Title"] = "Editar Noticia";
+}
+
+
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0" style="margin-bottom:16%">
+        <div class="card-header text-white d-flex align-items-center" style="background-color: #96B012;">
+            <i class="fas fa-newspaper me-2"></i>
+            <h3 class="card-title mb-0">Editar Noticia</h3>
+        </div>
+        <div class="card-body">
+ 
+        <form asp-action="Edit" method="post" asp-antiforgery="true" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <!-- Sección Izquierda -->
+                    <div class="col-md-6">
+                        <div class="mb-3" >
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly />
+            </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Titulo" class="form-label fw-bold">
+                                <i class="fas fa-heading"></i> Título
+                            </label>
+                            <input asp-for="Titulo" class="form-control" placeholder="Ingrese el título de la noticia" style="max-width: 90%;" />
+                            <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Descripcion" class="form-label fw-bold">
+                                <i class="fas fa-align-left"></i> Descripción
+                            </label>
+                            <textarea asp-for="Descripcion" class="form-control" placeholder="Ingrese la descripción de la noticia" rows="4" style="max-width: 90%;"></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+                    </div>
+
+
+                    <!-- Sección Derecha -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                       
+                @if (Model.ImagenEdit != null && Model.ImagenEdit.Length > 0)
+                {
+                    <img class="card-img-top"
+                         style="max-height:360px; max-width:360px;"
+                         role="img"
+                         src="data:image/jpeg;charset=utf-8;base64,@Convert.ToBase64String(Model.ImagenEdit)"
+                         alt="ImagenEdit" />
+                }
+                else
+                {
+                    <p>No hay imagen disponible.</p>
+                }
+            </div>
+            <input type="hidden" name="ImagenEdit" value="@Convert.ToBase64String(Model.ImagenEdit)" />
+
+                        <div class="mb-3">
+                            <label class="control-label"><i class="fas fa-image"></i> Imagen </label>
+                <input type="file" id="imageFile" name="imageFile" class="form-control" accept=".jpg, .jpeg, .png, .gif" />
+            </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-toggle-on"></i> Estado
+                            </label>
+                <div>
+                                <div class="form-check">
+                    <label>
+                        <input type="radio" asp-for="Estado" value="1" id="radioActivo" />
+                        Activo
+                    </label>
+                                </div>
+                                <div class="form-check">
+                        <label >
+                            <input type="radio" asp-for="Estado" value="0" id="radioInactivo" />
+                            Inactivo
+                        </label>
+                                </div>
+                                <span asp-validation-for="Estado" class="text-danger"></span>
+             
+                                </div>
+                        </div>
+                    </div>
+               
+            </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="IndexAdmin" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left me-1"></i>Regresar
+                    </a>
+                    <button type="submit" class="btn btn-primary" style="background-color: #96B012;">
+                        <i class="fas fa-save me-1"></i>Guardar
+                    </button>
+                </div>
+        </form>
+    </div>
+</div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Maneja la selección de radio buttons
+        $("input[name='Estado']").change(function () {
+            $("#radioInactivo").prop("disabled", $("#radioActivo").is(":checked"));
+        });
+
+        // Validación personalizada para el formulario
+        $("form").submit(function (event) {
+            var titulo = $("#Titulo").val();
+            var descripcion = $("#Descripcion").val();
+            var fechaPublicacion = $("#FechaPublicacion").val();
+            var estado = $("input[name='Estado']:checked").val(); // Obtiene el valor del estado
+
+            // Validar que se ingrese un título
+            if (!titulo || titulo.trim() === "") {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'Debe ingresar el título.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return;
+            }
+
+            // Validar que la descripción no contenga caracteres especiales
+            var specialChars = /[!#$%^&*()?"{}|<>]/g; // Expresión regular para caracteres especiales
+            if (specialChars.test(titulo)) {
+                event.preventDefault(); // Evita el envío del formulario
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'El título no debe contener caracteres especiales.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return; // Detiene la ejecución
+            }
+
+            // Validar que se ingrese una descripción
+            if (!descripcion || descripcion.trim() === "") {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'Debe ingresar la descripción.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return;
+            }
+
+            // Validar que la descripción no contenga caracteres especiales
+            if (specialChars.test(descripcion)) {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'La descripción no debe contener caracteres especiales.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return;
+            }
+
+           
+        });
+    </script>
+}

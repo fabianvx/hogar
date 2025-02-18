@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Hogar.Application.DTOs.NoticiaDTO>
+@{
+    ViewData["Title"] = "Noticias";
+}
+
+<div class="hero-section text-white text-center py-5" style="background-color: #96B012; border-radius: 10px;">
+    <div class="container">
+        <h1 class="text-center fw-bold" style="color: #ffff; text-shadow: 2px 2px 4px black;">
+            NOTICIAS
+        </h1>
+        <p class="lead" style="color: #fff;">Mantente al día con las últimas noticias y eventos de nuestra comunidad.</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var noticia in Model)
+        {
+            if(noticia.Estado == 1){
+            <div class="col-md-4 mb-4">
+                <div class="card news-card shadow-lg border-0">
+                    <div class="card-img-container">
+                        <img class="card-img-top img-fluid"
+                             style="height: 200px; object-fit: cover; filter: brightness(50%);"
+                             src="data:image/jpeg;base64,@Convert.ToBase64String(noticia.Imagen)"
+                             alt="Noticia" />
+                        <div class="card-overlay text-white d-flex align-items-center justify-content-center">
+                            <h5 class="card-title text-center fw-bold px-2">
+                                @noticia.Titulo
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text justified-text" style="color: #4A4A42;">
+                            @(noticia.Descripcion.Length > 90 ? noticia.Descripcion.Substring(0, 90) + "..." : noticia.Descripcion)
+                        </p>
+                        <div class="boton">
+                            <a href="@Url.Action("Details", "Noticia", new { id = noticia.Id })" class="btn btn-sm" style="background-color: #BAD535; color: white;">Leer más</a>
+
+                        </div>
+                  </div>
+                </div>
+            </div>
+            }
+        }
+    </div>
+</div>
+
+<style>
+    .news-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Contenedor de la imagen con efecto tenue */
+    .card-img-container {
+        position: relative;
+        width: 100%;
+        height: 200px; /* Ajusta según necesidades */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Capa oscura sobre la imagen para mejorar la legibilidad */
+    .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0); /* Opacidad controlada */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 1px 1px 4px black;
+        border-radius: 12px 12px 0 0;
+    }
+
+    /* Texto dentro de la card */
+    .card-content {
+        position: relative;
+        color: white;
+        padding: 15px;
+        text-align: justify;
+    }
+
+    .boton{
+    text-align:center;
+    }
+    /* Botón de acción */
+    .btn {
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: #BAD535;
+        color: #4A4A42;
+        font-size: 18px;
+        padding: 10px 25px;
+ 
+    }
+
+        .btn:hover {
+            background-color: #96B012;
+            color: white;
+        }
+
+</style>

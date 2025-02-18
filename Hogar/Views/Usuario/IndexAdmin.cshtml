@@ -1,0 +1,181 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<Hogar.Application.DTOs.UsuarioDTO>
+
+@{
+    ViewData["Title"] = "Lista de usuarios";
+}
+
+<div style="margin-top:5%;margin-bottom:2% ">
+    <h1>Lista de usuarios</h1>
+</div>
+
+<p style="margin-bottom:2% ">
+    <a class="agregar-btn" asp-action="Create">Crear Usuario</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Apellidos)</th>
+            <th>@Html.DisplayNameFor(model => model.Correo)</th>
+            <th>@Html.DisplayNameFor(model => model.TipoNavigation)</th>
+            <th>@Html.DisplayNameFor(model => model.Estado)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Apellidos)</td>
+                <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+                <td>@Html.DisplayFor(modelItem => item.TipoNavigation.Descripcion)</td>
+                <td>@Html.DisplayFor(modelItem => item.EstadoDescripcion)</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Acciones">
+                        @if ("0" != Context.Session.GetString("UserId"))
+                        {
+                            @if ("0" != item.Id)
+                            {
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
+                                }
+                        }else{
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
+                        }
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalle</a>
+                   
+                        @if (item.Id != Context.Session.GetString("UserId"))
+                        {
+                            @if (item.Id != "0")
+                            {
+                                <button type="button" class="btn btn-warning" onclick="confirmDelete(@item.Id)">Eliminar</button>
+                            }
+                        }
+
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">
+                <div class="btn-toolbar d-flex justify-content-end" role="toolbar">
+                    <div class="btn-group" role="group">
+                        @Html.PagedListPager((IPagedList)Model, page =>
+                                 Url.Action("IndexAdmin", new { page }), new PagedListRenderOptions
+                        {
+                            Display = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            LiElementClasses = new String[] { "page-item" },
+                            PageClasses = new String[] { "page-link" }
+                        })
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div style="margin-bottom:25%"></div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(Id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡Vas a eliminar un usuario!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var form = document.createElement("form");
+                    form.method = "post";
+                    form.action = "@Url.Action("Delete", "Usuario")";
+                    var input = document.createElement("input");
+                    input.type = "hidden";
+                    input.name = "id";
+                    input.value = Id;
+                    form.appendChild(input);
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .agregar-btn {
+            background-color: #BAD535;
+            color: #4A4A42;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+            .agregar-btn:hover {
+                background-color: #9CB12D;
+                color: white;
+                transform: scale(1.1);
+            }
+
+        .btn-success {
+            background-color: #DAF7A6;
+            border-color: black;
+            color: #4A4A42;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-success:hover {
+                background-color: #DAF7A6;
+                transform: scale(1.05);
+                color: #4A4A42;
+                border-color: black;
+            }
+
+        .btn-info {
+            background-color: #ecfc85;
+            border-color: black;
+            color: #4A4A42;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-info:hover {
+                background-color: #ecfc85;
+                color: #4A4A42;
+                transform: scale(1.05);
+                border-color: black;
+            }
+
+        .btn-warning {
+            background-color: #ff8181;
+            border-color: black;
+            color: #4A4A42;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-warning:hover {
+                background-color: #ff8181;
+                color: #4A4A42;
+                transform: scale(1.05);
+                border-color: black;
+            }
+    </style>
+}

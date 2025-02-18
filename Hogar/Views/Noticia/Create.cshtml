@@ -1,0 +1,123 @@
+﻿@model Hogar.Application.DTOs.NoticiaDTO
+
+@{
+    ViewData["Title"] = "Crear Noticia";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0" style="margin-bottom:16%">
+        <div class="card-header text-white d-flex align-items-center" style="background-color: #96B012;">
+            <i class="fas fa-newspaper me-2"></i>
+            <h3 class="card-title mb-0">Crear Nueva Noticia</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" asp-antiforgery="true" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                <div class="row">
+                    <!-- Sección Izquierda -->
+                    <div class="col-md-6">
+                        <div class="mb-3" hidden>
+                            <label asp-for="Id" class="form-label fw-bold">
+                                <i class="fas fa-id-badge me-2"></i>ID
+                            </label>
+                            <input asp-for="Id" class="form-control" value="@ViewBag.id" readonly />
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Titulo" class="form-label fw-bold">
+                                <i class="fas fa-heading me-2"></i>Título
+                            </label>
+                            <input asp-for="Titulo" class="form-control" placeholder="Ingrese el título" />
+                            <span asp-validation-for="Titulo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- Sección Derecha -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label asp-for="Descripcion" class="form-label fw-bold">
+                                <i class="fas fa-align-left me-2"></i>Descripción
+                            </label>
+                            <textarea asp-for="Descripcion" class="form-control" placeholder="Ingrese la descripción"></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Imagen" class="form-label fw-bold">
+                                <i class="fas fa-image me-2"></i>Imagen
+                            </label>
+                            <input type="file" id="imageFile" name="imageFile" class="form-control" accept=".jpg, .jpeg, .png, .gif" required />
+                            <span asp-validation-for="Imagen" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="IndexAdmin" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left me-1"></i>Regresar
+                    </a>
+                    <button type="submit" class="btn btn-primary" style="background-color: #96B012;">
+                        <i class="fas fa-save me-1"></i>Crear Noticia
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                var titulo = $("#Titulo").val();
+                var descripcion = $("#Descripcion").val();
+                var imageFile = $("#imageFile")[0].files.length;
+                var specialChars = /[!#$%^&*().?":{}|<>]/g;
+
+                if (!titulo || titulo.trim() === "" || titulo.length < 5 || specialChars.test(titulo)) {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'El título debe tener al menos 5 caracteres y no contener caracteres especiales.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!descripcion || descripcion.trim() === "" || descripcion.length < 5 || specialChars.test(descripcion)) {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'La descripción debe tener al menos 5 caracteres y no contener caracteres especiales.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!imageFile || imageFile === 0) {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe seleccionar una imagen.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+            });
+        });
+    </script>
+}

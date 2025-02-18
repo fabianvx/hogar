@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B22C2E20-5FC9-4540-AC8E-7916962C2541}|Hogar.Application\\Hogar.Application.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar.application\\services\\implementations\\serviceemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B22C2E20-5FC9-4540-AC8E-7916962C2541}|Hogar.Application\\Hogar.Application.csproj|solutionrelative:hogar.application\\services\\implementations\\serviceemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\views\\home\\contacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\views\\home\\contacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\views\\usuario\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\views\\usuario\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\views\\usuario\\indexadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\views\\usuario\\indexadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C14B1F1-4E2E-43A7-A133-43719AEB508C}|Hogar\\Hogar.Web.csproj|solutionrelative:hogar\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B22C2E20-5FC9-4540-AC8E-7916962C2541}|Hogar.Application\\Hogar.Application.csproj|d:\\documents\\utn\\tcu\\proyecto\\hogar v6\\hogar\\hogar.application\\profiles\\tipousuarioprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B22C2E20-5FC9-4540-AC8E-7916962C2541}|Hogar.Application\\Hogar.Application.csproj|solutionrelative:hogar.application\\profiles\\tipousuarioprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Program.cs",
+              "RelativeDocumentMoniker": "Hogar\\Program.cs",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Program.cs",
+              "RelativeToolTip": "Hogar\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T05:09:41.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Hogar\\appsettings.Development.json",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\appsettings.Development.json",
+              "RelativeToolTip": "Hogar\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-18T05:06:07.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\appsettings.json",
+              "RelativeDocumentMoniker": "Hogar\\appsettings.json",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\appsettings.json",
+              "RelativeToolTip": "Hogar\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-18T05:06:04.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Hogar\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Hogar\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAkwOQAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T22:32:32.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceEmail.cs",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar.Application\\Services\\Implementations\\ServiceEmail.cs",
+              "RelativeDocumentMoniker": "Hogar.Application\\Services\\Implementations\\ServiceEmail.cs",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar.Application\\Services\\Implementations\\ServiceEmail.cs",
+              "RelativeToolTip": "Hogar.Application\\Services\\Implementations\\ServiceEmail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T21:21:20.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Hogar\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Hogar\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T21:19:53.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Contacto.cshtml",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Home\\Contacto.cshtml",
+              "RelativeDocumentMoniker": "Hogar\\Views\\Home\\Contacto.cshtml",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Home\\Contacto.cshtml",
+              "RelativeToolTip": "Hogar\\Views\\Home\\Contacto.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T21:19:49.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Hogar\\Controllers\\UsuarioController.cs",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Hogar\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T21:19:36.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Usuario\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Hogar\\Views\\Usuario\\Edit.cshtml",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Usuario\\Edit.cshtml",
+              "RelativeToolTip": "Hogar\\Views\\Usuario\\Edit.cshtml",
+              "ViewState": "AgIAAOcAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T17:44:57.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Usuario\\Create.cshtml",
+              "RelativeDocumentMoniker": "Hogar\\Views\\Usuario\\Create.cshtml",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Usuario\\Create.cshtml",
+              "RelativeToolTip": "Hogar\\Views\\Usuario\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T17:44:46.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "Hogar\\Views\\Account\\ChangePassword.cshtml",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeToolTip": "Hogar\\Views\\Account\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T17:44:14.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Hogar\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Hogar\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T17:43:55.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IndexAdmin.cshtml",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Usuario\\IndexAdmin.cshtml",
+              "RelativeDocumentMoniker": "Hogar\\Views\\Usuario\\IndexAdmin.cshtml",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar\\Views\\Usuario\\IndexAdmin.cshtml",
+              "RelativeToolTip": "Hogar\\Views\\Usuario\\IndexAdmin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T17:43:49.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TipoUsuarioProfile.cs",
+              "DocumentMoniker": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar.Application\\Profiles\\TipoUsuarioProfile.cs",
+              "RelativeDocumentMoniker": "Hogar.Application\\Profiles\\TipoUsuarioProfile.cs",
+              "ToolTip": "D:\\Documents\\UTN\\TCU\\Proyecto\\Hogar V6\\Hogar\\Hogar.Application\\Profiles\\TipoUsuarioProfile.cs",
+              "RelativeToolTip": "Hogar.Application\\Profiles\\TipoUsuarioProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T07:19:59.581Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

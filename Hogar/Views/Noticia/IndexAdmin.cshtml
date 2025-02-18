@@ -1,0 +1,207 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<Hogar.Application.DTOs.NoticiaDTO>
+
+
+@{
+    ViewData["Title"] = "Lista de Noticias";
+
+
+}
+
+<div style="margin-top:5%;margin-bottom:2% ">
+    <h1>Lista de Noticias</h1>
+</div>
+<p style="margin-bottom:2% ">
+
+    <a class="agregar-btn" asp-action="Create">Crear Noticia</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+       
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Id != 0)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+              
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoDescripcion)
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Acciones">
+
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
+                            <a asp-action="Details"
+                               asp-route-id="@item.Id"
+                               class="btn btn-info">Detalle</a>
+                            @* @Html.ActionLink("Detalle", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info" }) *@
+                            @*   @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-warning" }) *@
+                            <button type="button" class="btn btn-warning" onclick="confirmDelete(@item.Id)">Eliminar</button>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="btn-toolbar d-flex justify-content-end" role="toolbar">
+                    <div class="btn-group" role="group">
+                        @Html.PagedListPager((IPagedList)Model, page =>
+                                 Url.Action("IndexAdmin", new { page }), new
+                                 PagedListRenderOptions
+                        {
+                            Display = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            LiElementClasses = new String[] { "page-item" },
+                            PageClasses = new String[] { "page-link" }
+                        }
+                                 )
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div style="margin-bottom:25%">
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(Id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡Vas a eliminar una noticia!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario confirma, se hace el POST para eliminar el producto
+                    var form = document.createElement("form");
+                    form.method = "post";
+                    form.action = "@Url.Action("Delete", "Noticia")"; // Genera la URL correcta
+
+                    var input = document.createElement("input");
+                    input.type = "hidden";
+                    input.name = "id";
+                    input.value = Id;
+
+                    form.appendChild(input);
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            });
+        }
+    </script>
+
+
+
+    <style>
+        /* Estilo para el botón de "Crear Noticia" */
+        .agregar-btn {
+            background-color: #BAD535; /* Color llamativo de la paleta */
+            color: #4A4A42; /* Contraste adecuado para el texto */
+            border-radius: 30px; /* Bordes redondeados */
+            padding: 10px 20px; /* Ajusta el espacio interno */
+            font-size: 14px; /* Ajusta el tamaño de la fuente */
+            font-weight: bold; /* Texto más visible */
+            border: none; /* Elimina el borde */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            transition: all 0.3s ease; /* Transición para el hover */
+            text-decoration:none;
+        }
+
+            /* Estilo para agrandar el botón "Crear Noticia" al pasar el mouse */
+            .agregar-btn:hover {
+                background-color: #9CB12D; /* Color más oscuro al pasar el mouse */
+                color: white; /* Texto en blanco */
+                transform: scale(1.1); /* Efecto de agrandamiento */
+            }
+
+        /* Estilo para los botones en el grupo de acciones */
+        .btn-success {
+            background-color: #DAF7A6; /* Color verde */
+            border-color: black;
+            color: #4A4A42; /* Texto en blanco */
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-success:hover {
+                background-color: #DAF7A6; /* Color más oscuro */
+                transform: scale(1.05);
+                color: #4A4A42;
+                border-color: black;
+            }
+
+        .btn-info {
+            background-color: #ecfc85; /* Color azul */
+            border-color: black;
+            color: #4A4A42;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-info:hover {
+                background-color: #ecfc85; /* Azul más oscuro */
+                color: #4A4A42; 
+                transform: scale(1.05);
+                border-color: black;
+            }
+
+        .btn-warning {
+            background-color: #ff8181; /* Color amarillo */
+            border-color: black;
+            color: #4A4A42;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-warning:hover {
+                background-color: #ff8181; /* Amarillo más oscuro */
+                color: #4A4A42;
+                transform: scale(1.05);
+                border-color: black;
+            }
+
+    </style>
+
+
+
+}
+

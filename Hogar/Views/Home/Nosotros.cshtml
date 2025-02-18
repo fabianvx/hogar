@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Nosotros";
+}
+
+<div class="hero-section text-white text-center py-5" style="background-color: #96B012;  border-radius: 10px;">
+    <div class="container">
+        <h1 class="text-center fw-bold" style="color: #ffff; text-shadow: 2px 2px 4px black;">
+            NUESTRA HISTORIA
+        </h1>
+        <p class="lead" style="color: #fff;">Conoce nuestra historia, misión y el impacto que hemos logrado.</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="content-section">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p class="justified-text">
+            La idea de ayudar a los ancianos desamparados de la comunidad nació del corazón de una apreciable familia del pueblo, con una profunda vocación de servicio. Inspirados por su noble propósito, lograron reunir a un grupo de vecinos y formar la primera comisión Pro-Hogar de Ancianos, con el apoyo incondicional del querido párroco, Presbítero Jafeth Jiménez, cariñosamente conocido como el “Padre Jiménez”.
+        </p>
+        <p class="justified-text">
+            Fue el 8 de mayo de 1975 cuando los sueños de esta comisión fundadora se hicieron realidad, inaugurando el Hogar en unas modestas instalaciones que acogieron a ocho ancianos y cuatro dedicadas personas que los atendían.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <h5>1975</h5>
+                <p>Se inaugura el Hogar de Ancianos con ocho residentes.</p>
+            </div>
+
+            <!-- Imagen de la parroquia dentro del timeline -->
+            <div class="timeline-item text-center">
+                <img src="/images/parroquia.JPG" alt="Parroquia" class="img-fluid rounded shadow-lg timeline-image">
+                <p class="image-caption">Parroquia que inspiró la creación del Hogar de Ancianos.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h5>1980</h5>
+                <p>Inicia la construcción de instalaciones más modernas.</p>
+            </div>
+            <div class="timeline-item">
+                <h5>Actualidad</h5>
+                <p>El Hogar cuenta con modernas instalaciones y un equipo interdisciplinario profesional.</p>
+            </div>
+        </div>
+
+        <p class="justified-text">
+            Gracias a la acertada dirección de las sucesivas Juntas Directivas, el Hogar ha evolucionado hasta convertirse en una institución ejemplar. Hoy brindamos una atención individualizada y profesional que busca mejorar la calidad de vida de nuestros adultos mayores.
+        </p>
+    </div>
+</div>
+
+<style>
+    .content-section {
+        line-height: 1.8;
+        font-size: 1rem;
+        color: #4A4A42;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #BAD535;
+        border-bottom: 3px solid #4A4A42;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .justified-text {
+        text-align: justify;
+        color: #4A4A42;
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 40px;
+        border-left: 3px solid #BAD535;
+        margin-top: 30px;
+    }
+
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+
+        .timeline-item h5 {
+            font-weight: bold;
+            color: #BAD535;
+            font-size: 1.2rem;
+        }
+
+        .timeline-item p {
+            color: #4A4A42;
+            margin: 0;
+        }
+
+    /* Estilo de la imagen en el timeline */
+    .timeline-image {
+        width: 80%;
+        max-height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .image-caption {
+        font-size: 0.9rem;
+        color: #4A4A42;
+        margin-top: 5px;
+    }
+</style>

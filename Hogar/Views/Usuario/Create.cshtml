@@ -1,0 +1,271 @@
+﻿ @model Hogar.Application.DTOs.UsuarioDTO
+
+@{
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0" style="margin-bottom:16%">
+        <div class="card-header   text-white d-flex align-items-center" style="background-color: #96B012;">
+            <i class="fas fa-user-plus me-2"></i>
+            <h3 class="card-title mb-0">Crear Nuevo Usuario</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" asp-antiforgery="true" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <div class="row">
+                    <!-- Sección Izquierda -->
+                    <div class="col-md-6">
+                        <!-- Campo ID -->
+                        <div class="mb-3">
+                            <label asp-for="Id" class="form-label fw-bold">
+                                <i class="fas fa-id-badge me-2"></i>ID
+                            </label>
+                            <input asp-for="Id"  id="Id" class="form-control" placeholder="Ingrese el ID" style="max-width: 90%;" />
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo Nombre -->
+                        <div class="mb-3">
+                            <label asp-for="Nombre" class="form-label fw-bold">
+                                <i class="fas fa-user me-2"></i>Nombre
+                            </label>
+                            <input asp-for="Nombre" id="Nombre" class="form-control" placeholder="Ingrese el nombre" style="max-width: 90%;" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo Apellidos -->
+                        <div class="mb-3">
+                            <label asp-for="Apellidos" class="form-label fw-bold">
+                                <i class="fas fa-user-tag me-2"></i>Apellidos
+                            </label>
+                            <input asp-for="Apellidos" id="Apellidos" class="form-control" placeholder="Ingrese los apellidos" style="max-width: 90%;" />
+                            <span asp-validation-for="Apellidos" class="text-danger"></span>
+                        </div>
+
+           
+                    </div>
+
+                    <!-- Sección Derecha -->
+                    <div class="col-md-6">
+
+                        <!-- Campo Correo -->
+                        <div class="mb-3">
+                            <label asp-for="Correo" class="form-label fw-bold">
+                                <i class="fas fa-envelope me-2"></i>Correo Electrónico
+                            </label>
+                            <input asp-for="Correo" class="form-control" placeholder="Ingrese el correo" style="max-width: 90%;" />
+                            <span asp-validation-for="Correo" id="Correo" class="text-danger"></span>
+                        </div>
+                        <!-- Campo Contraseña -->
+                        <div class="mb-3">
+                            <label asp-for="Contraseña" class="form-label fw-bold">
+                                <i class="fas fa-key me-2"></i>Contraseña
+                            </label>
+                            <div class="input-group">
+                                <input asp-for="Contraseña" class="form-control" id="password" type="password" placeholder="Ingrese la contraseña" style="max-width: 90%;" />
+                    
+                            </div>
+                            <span asp-validation-for="Contraseña" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo Tipo de Usuario -->
+                        <div class="mb-3">
+                            <label asp-for="Tipo" class="form-label fw-bold">
+                                <i class="fas fa-user-shield me-2"></i>Tipo de Usuario
+                            </label>
+                            @Html.DropDownListFor(model => model.Tipo,
+                                     new SelectList(ViewBag.ListRol, "Id", "Descripcion"),
+                                     "Seleccione un tipo de usuario",
+                                     new { @class = "form-select", id = "Tipo" })
+                            
+                        </div>
+
+                
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="IndexAdmin" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left me-1"></i>Regresar
+                    </a>
+                    <button type="submit" value="Create" class="btn btn-primary" style="background-color: #96B012;">
+                        <i class="fas fa-save me-1"></i>Crear Usuario
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+ 
+ 
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Mostrar/Ocultar contraseña
+            document.addEventListener("DOMContentLoaded", function () {
+                const passwordInput = document.getElementById("password");
+                const toggleButton = document.getElementById("togglePassword");
+
+                toggleButton.addEventListener("mousedown", function () {
+                    passwordInput.type = "text";
+                    toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                });
+
+                document.addEventListener("mouseup", function () {
+                    passwordInput.type = "password";
+                    toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+                });
+
+                toggleButton.addEventListener("mouseleave", function () {
+                    passwordInput.type = "password";
+                    toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+                });
+            });
+
+            // Validación de ID duplicado
+            $("#Id").on("blur", function () {
+                var idIngresado = $(this).val();
+                if (idIngresado) {
+                    $.get("/Usuario/VerificarIdExiste", { id: idIngresado }, function (data) {
+                        if (data) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ID Duplicado',
+                                text: 'El ID ingresado ya existe. Por favor, elija otro.',
+                                toast: true,
+                                position: 'center',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true
+                            });
+
+                            $("#Id").addClass("is-invalid");
+                        } else {
+                            $("#Id").removeClass("is-invalid");
+                        }
+                    });
+                }
+            });
+
+            // Validación antes de enviar el formulario
+            $("form").submit(function (event) {
+                if (!$("form").valid()) {
+                    event.preventDefault();
+                    return;
+                }
+
+                var id = $("#Id").val();
+                var nombre = $("#Nombre").val();
+          
+                var apellidos = $("#Apellidos").val();
+                var correo = $("#Correo").val();
+                var contraseña = $("#password").val();
+                var tipo = $("#Tipo").val();
+
+                if (!id || id.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar un ID.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!nombre || nombre.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar un nombre.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+
+                if (!apellidos || apellidos.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar los apellidos.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!correo || correo.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar un correo.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!contraseña || contraseña.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar una contraseña.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!tipo || tipo === "0") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe seleccionar un tipo de usuario.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+            });
+        });
+    </script>
+}

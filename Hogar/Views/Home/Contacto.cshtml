@@ -1,0 +1,176 @@
+﻿@{
+    ViewData["Title"] = "Contacto";
+}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+<!-- API Google Maps -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsHqXE3hf-yHmDb7_ebI43K5ggI6tWIjY&callback=initMap" async defer></script>
+
+<!-- Custom Styles -->
+<style>
+    .contact-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+    .contact-info {
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #96B012; /* Verde que se usa en la marca */
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info:hover i {
+            transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+        }
+
+    .map-container {
+        margin: 40px 0;
+    }
+
+    .contact-form .form-control {
+        border-radius: 25px;
+        margin-bottom: 15px; /* Márgenes en los campos */
+    }
+
+    .contact-form .btn-primary {
+        background-color: #96B012;
+        border-color: #96B012;
+        border-radius: 25px;
+        padding: 12px 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .contact-form .btn-primary:hover {
+            background-color: #9CB12D;
+            border-color: #9CB12D;
+            transform: scale(1.05); /* Efecto de agrandamiento */
+        }
+
+    .map-container iframe {
+        width: 100%;
+        height: 500px; /* Hacer el mapa completamente ancho */
+        border: none;
+        transition: transform 0.3s ease;
+    }
+
+    .map-container:hover iframe {
+        transform: scale(1.05); /* Efecto de agrandamiento en el mapa */
+    }
+
+    /* Efecto de hover en la imagen de Waze */
+    .d-block img {
+        transition: transform 0.3s ease;
+    }
+
+        .d-block img:hover {
+            transform: scale(1.1); /* Efecto de expansión en la imagen */
+        }
+
+    /* Campos del formulario más estrechos y centrados */
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="container contact-section">
+    <div class="row">
+        <!-- Sección de Explicación -->
+        <div class="col-12 text-center mb-5">
+            <h2>Estamos aquí para ti</h2>
+            <p>En el Hogar de Ancianos Jafeth Jimenez Morales, entendemos lo importante que es mantenerse conectado. Por eso ofrecemos diferentes métodos de contacto para que puedas elegir el que mejor se adapte a ti. Ya sea a través de nuestra línea telefónica, correo electrónico, o mediante nuestro formulario de contacto, estamos siempre disponibles para responder tus inquietudes y ofrecer la atención que te mereces.</p>
+        </div>
+    </div>
+ 
+    <!-- Mapa con marcador en la ubicación correcta -->
+    <div class="col-12">
+        <h3 class="text-center mb-4">¿Dónde encontrarnos?</h3>
+        <div  style="text-align:center" >
+            <p>Estamos ubicados en Alajuela, Grecia, San Roque, 1km al Este del Liceo León Cortés Castro, frente a Fábrica de Manteados Grecia.</p>
+        </div>
+       
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2885889033367!2d-84.3081821!3d10.0910573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa058e3a3360c7f%3A0x4eb391c29f69fb90!2sHogar%20de%20Ancianos%20Jafeth%20Jim%C3%A9nez!5e0!3m2!1ses!2scr!4v1671287050284!5m2!1ses!2scr"
+                    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <!-- Información de Contacto -->
+        <div class="col-12 col-md-6">
+
+            <div class="text-center mb-4">
+
+                <!-- Enlace a Waze -->
+                <a href="https://waze.com/ul?ll=10.091059,-84.3081277&navigate=yes" target="_blank" class="d-block mt-3">
+                    <img src="/images/Waze.png" alt="Ir al mapa en Waze" style="width: 120px;">
+                </a>
+
+            </div>
+
+            <h3 class="text-center mb-4" style="margin-top:15%">Contáctanos</h3>
+            <div class="contact-info text-center">
+
+                <p><i class="bi bi-phone"></i> +506 8970-7823</p>
+       
+                <p>
+                    <i class="bi bi-envelope"></i> <a href="mailto:hogarjafethjimenez@gmail.com" class="text-decoration-none" style="color: #BAD535;">
+                    hogarjafethjimenez@gmail.com
+                </a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Formulario de Consulta -->
+        <div class="col-12 col-md-6">
+            <h3 class="text-center mb-4">Formulario de Consulta</h3>
+            <form class="contact-form" method="post" action="@Url.Action("EnviarConsulta", "Home")">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre y Apellidos</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+ 

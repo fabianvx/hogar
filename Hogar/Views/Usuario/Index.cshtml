@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Hogar.Application.DTOs.UsuarioDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center my-4">Lista de Usuarios Quiz #1</h1>
+
+<div class="container">
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">@Html.DisplayFor(modelItem => item.Nombre) @Html.DisplayFor(modelItem => item.Apellidos)</h5>
+                    <p class="mb-1">
+                        <strong>Correo: </strong>@Html.DisplayFor(modelItem => item.Correo)<br />
+                        <strong>Contraseña: </strong>@Html.DisplayFor(modelItem => item.Contraseña)<br />
+                        <strong>Tipo: </strong>@Html.DisplayFor(modelItem => item.TipoNavigation.Descripcion)
+                    </p>
+                </div>
+                <div class="btn-group">
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.Id */ }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Details", "Details", new { /* id=item.Id */ }, new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.Id */ }, new { @class = "btn btn-danger btn-sm" })
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+

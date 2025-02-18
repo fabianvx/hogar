@@ -1,0 +1,218 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+
+<!-- Carrusel -->
+<div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel" style="margin-top:10%;">
+    <!-- Indicadores del carrusel -->
+    <ol class="carousel-indicators" hidden>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <!-- Primer slide -->
+        <div class="carousel-item active">
+            <div class="d-flex align-items-center" style="background-image: url('/images/aso.png'); background-size: cover; background-position: center; height: 500px; position: relative;">
+                <!-- Capa de oscurecimiento -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+                <!-- Contenido -->
+                <div class="container text-center text-white" style="position: relative; z-index: 2;">
+                    <h2 class="display-4 fw-bold" style="color: white; text-shadow: 1px 1px 2px black;">FORME PARTE DE NUESTRA ASAMBLEA DE ASOCIADOS</h2>
+                    <p class="lead">
+                        Ayúdanos a formar parte de esta gran iniciativa y contribuir al bienestar de esta poblacion.                        
+                    </p>
+    
+                    <a asp-area="" asp-controller="Home" asp-action="Asociados" class="btn" style="background-color: #BAD535; color: #4A4A42; font-size: 18px; padding: 10px 25px; border-radius: 5px;">Más información</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Segundo slide -->
+        <div class="carousel-item">
+            <div class="d-flex align-items-center" style="background-image: url('/images/2.jpg'); background-size: cover; background-position: center; height: 500px; position: relative;">
+                <!-- Capa de oscurecimiento -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+                <!-- Contenido -->
+                <div class="container text-center text-white" style="position: relative; z-index: 2;">
+                    <h2 class="display-4 fw-bold" style="color: white; text-shadow: 1px 1px 2px black;">CUIDADO PERSONALIZADO EN UN AMBIENTE FAMILIAR</h2>
+                    <p class="lead">Brindamos un entorno cálido y familiar para nuestros residentes, donde se sienten como en casa.</p>
+                    <a asp-area="" asp-controller="Home" asp-action="Servicios" class="btn" style="background-color: #BAD535; color: #4A4A42; font-size: 18px; padding: 10px 25px; border-radius: 5px;">Conoce más sobre nuestros servicios</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercer slide -->
+ 
+
+
+        <div class="carousel-item">
+            <div class="d-flex align-items-center" style="background-image: url('/images/vol.jpg'); background-size: cover; background-position: center; height: 500px; position: relative;">
+                <!-- Capa de oscurecimiento -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+                <!-- Contenido -->
+                <div class="container text-center text-white" style="position: relative; z-index: 2;">
+                    <h2 class="display-4 fw-bold" style="color: white; text-shadow: 1px 1px 2px black;">SEA PARTE DE NUESTROS VOLUNTARIOS</h2>
+                    <p class="lead">Contribuya con iniciativas del hogar ad honorem garantizando una calidad de vida inigualable para nuestros adultos mayores.</p>
+                    <a asp-area="" asp-controller="Home" asp-action="Voluntariado" class="btn" style="background-color: #BAD535; color: #4A4A42; font-size: 18px; padding: 10px 25px; border-radius: 5px;">Más información</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarto slide -->
+        <div class="carousel-item">
+            <div class="d-flex align-items-center" style="background-image: url('/images/3.jpg'); background-size: cover; background-position: center; height: 500px; position: relative;">
+                <!-- Capa de oscurecimiento -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+                <!-- Contenido -->
+                <div class="container text-center text-white" style="position: relative; z-index: 2;">
+                    <h2 class="display-4 fw-bold" style="color: white; text-shadow: 1px 1px 2px black;">ESTAMOS AQUÍ PARA CUIDAR DE SUS SERES QUERIDOS</h2>
+                    <p class="lead">Ofrecemos atención integral con el compromiso de mejorar la calidad de vida de las personas adultas mayores.</p>
+                    <a asp-area="" asp-controller="Home" asp-action="Ingreso" class="btn" style="background-color: #BAD535; color: #4A4A42; font-size: 18px; padding: 10px 25px; border-radius: 5px;">Ver requisitos de ingreso</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles del carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+<!-- Sección Valores -->
+<section style="margin-bottom:10%">
+    <h3 class="text-center mb-4" style="color: #fff;">NUESTROS VALORES NOS DIFERENCIAN</h3>
+    <div class="row text-center">
+        <!-- Misión -->
+        <div class="col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+            <div class="p-3" style="background-color: #4A4A42; width: 250px; height: 250px; border-radius: 15%; color: #fff; position: relative;">
+                <!-- Fondo verde que se expande hasta el borde -->
+                <div style="background-color: #BAD535; position: absolute; top: 0; left: 0; right: 0; height: 50px; border-top-left-radius: 25px ; border-top-right-radius: 25px ; z-index: 1;">
+                    <h4 class="text-dark text-center" style="line-height: 50px;">MISIÓN</h4>
+                </div>
+                <!-- Contenido de la card -->
+                <p style="font-size: 14px; z-index: 0; margin-top: 60px;">Ser una institución de bien social no lucrativa, para la atención integral humanista, universal, del Adulto Mayor que requiere y considera salud y calidad de vida.</p>
+            </div>
+        </div>
+
+
+        <!-- Visión -->
+        <div class="col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+            <div class="p-3" style="background-color: #4A4A42; width: 250px; height: 250px; border-radius: 15%; color: #fff; position: relative;">
+                <!-- Fondo verde que se expande hasta el borde -->
+                <div style="background-color: #BAD535; position: absolute; top: 0; left: 0; right: 0; height: 50px; border-top-left-radius: 25px; border-top-right-radius: 25px; z-index: 1;">
+                    <h4 class="text-dark text-center" style="line-height: 50px;">VISIÓN</h4>
+                </div>
+                <!-- Contenido de la card -->
+                <p style="font-size: 14px; z-index: 0; margin-top: 60px;">Mantenernos como una institución líder en la prestación de servicios de excelencia para el Adulto Mayor, proyectándonos en beneficio de quienes necesitan atención integral.</p>
+            </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+            <div class="p-3" style="background-color: #4A4A42; width: 250px; height: 250px; border-radius: 15%; color: #fff; position: relative;">
+                <!-- Fondo verde que se expande hasta el borde -->
+                <div style="background-color: #BAD535; position: absolute; top: 0; left: 0; right: 0; height: 50px; border-top-left-radius: 25px; border-top-right-radius: 25px; z-index: 1;">
+                    <h4 class="text-dark text-center" style="line-height: 50px;">VALORES</h4>
+                </div>
+                <!-- Contenido de la card -->
+                <p style="font-size: 14px; z-index: 0; margin-top: 60px;">Esta institución se maneja bajo los valores de respeto, bondad, humanidad, equidad, confianza y transparencia.</p>
+            </div>
+        </div>
+
+
+ 
+    </div>
+</section>
+    <style>
+        /* Estilos generales para las tarjetas */
+        .row .col-md-4 .p-3 {
+            background-color: #4A4A42; /* Color de fondo */
+            width: 250px; /* Ancho inicial */
+            height: 250px; /* Alto inicial */
+            border-radius: 15%; /* Bordes redondeados */
+            color: #fff; /* Color del texto */
+            position: relative; /* Necesario para posicionar elementos hijos */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformaciones */
+        }
+
+            /* Efecto hover para expandir las tarjetas */
+            .row .col-md-4 .p-3:hover {
+                transform: scale(1.1); /* Incremento del 10% en tamaño */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar sensación de elevación */
+            }
+
+            /* Fondo superior verde */
+            .row .col-md-4 .p-3 > div {
+                background-color: #BAD535; /* Color verde */
+                position: absolute; /* Posición relativa dentro de la tarjeta */
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50px; /* Altura del fondo verde */
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+                z-index: 1; /* Asegura que esté encima del contenido */
+            }
+
+                /* Título dentro del fondo verde */
+                .row .col-md-4 .p-3 > div h4 {
+                    color: #4A4A42; /* Color del texto del título */
+                    text-align: center; /* Alineación centrada */
+                    line-height: 50px; /* Centrado vertical */
+                    margin: 0; /* Sin márgenes */
+                }
+
+            /* Contenido del texto */
+            .row .col-md-4 .p-3 p {
+                font-size: 14px; /* Tamaño del texto */
+                z-index: 0; /* Detrás del fondo verde */
+                margin-top: 60px; /* Espaciado desde el fondo verde */
+            }
+
+    /* Estilo general para los botones en el carrusel */
+    .carousel-item .btn {
+        background-color: #BAD535; /* Color de fondo */
+        color: #4A4A42; /* Color del texto */
+        font-size: 18px; /* Tamaño de la fuente */
+        padding: 10px 25px; /* Espaciado del botón */
+        border-radius: 5px; /* Bordes redondeados */
+        font-weight: bold; /* Texto en negrita */
+        transition: all 0.3s ease; /* Transición para el hover */
+    }
+
+        /* Estilo para el hover de los botones del carrusel */
+        .carousel-item .btn:hover {
+            background-color: #9CB12D; /* Color más oscuro al pasar el mouse */
+            color: white; /* Texto en blanco */
+            transform: scale(1.1); /* Efecto de agrandamiento */
+        }
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+ 

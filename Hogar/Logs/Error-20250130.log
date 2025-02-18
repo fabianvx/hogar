@@ -1,0 +1,45 @@
+2025-01-30 01:16:12.222 -06:00 [ERR] 
+EventId :649-250130011612
+ErrorList :No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+StackTrace :   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Hogar.Web.Middleware.ErrorHandlingMiddleware.Invoke(HttpContext context) in D:\Documents\UTN\TCU\Proyecto\Hogar V3\Hogar\Hogar\Middleware\ErrorHandlingMiddleware.cs:line 21
+
+2025-01-30 01:16:25.304 -06:00 [ERR] 
+EventId :4186-250130011625
+ErrorList :No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+StackTrace :   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Hogar.Web.Middleware.ErrorHandlingMiddleware.Invoke(HttpContext context) in D:\Documents\UTN\TCU\Proyecto\Hogar V3\Hogar\Hogar\Middleware\ErrorHandlingMiddleware.cs:line 21
+
+2025-01-30 01:18:39.643 -06:00 [ERR] 
+EventId :4122-250130011839
+ErrorList :No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+StackTrace :   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Hogar.Web.Middleware.ErrorHandlingMiddleware.Invoke(HttpContext context)
+
+2025-01-30 01:20:20.839 -06:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@Titulo='Nuevas Cabinas Enormes' (Nullable = false) (Size = 22), @Descripcion='Agradecemos e Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes. Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes.' (Nullable = false) (Size = 233), @Imagen='0xFFD8FFE000104A46494600010101006000600000FFE102E04578696600004D4D...' (Nullable = false) (Size = 90421), @Estado='1', @Usuario=NULL (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+
+        UPDATE Noticia SET Titulo = @Titulo, Descripcion = @Descripcion, Imagen = @Imagen, Estado  = @Estado , Usuario  = @Usuario WHERE Id = @Id;
+2025-01-30 01:20:53.362 -06:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@Titulo='Nuevas Cabinas Enormes' (Nullable = false) (Size = 22), @Descripcion='Agradecemos e Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes. Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes.' (Nullable = false) (Size = 233), @Imagen='0xFFD8FFE000104A46494600010101006000600000FFE102E04578696600004D4D...' (Nullable = false) (Size = 90421), @Estado='1', @Usuario=NULL (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+
+        UPDATE Noticia SET Titulo = @Titulo, Descripcion = @Descripcion, Imagen = @Imagen, Estado  = @Estado , Usuario  = @Usuario WHERE Id = @Id;
+2025-01-30 01:25:11.605 -06:00 [ERR] Failed executing DbCommand (33ms) [Parameters=[@Titulo='Nuevas Cabinas Enormes' (Nullable = false) (Size = 22), @Descripcion='Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes. Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes.' (Nullable = false) (Size = 219), @Imagen='0xFFD8FFE000104A46494600010101006000600000FFE102E04578696600004D4D...' (Nullable = false) (Size = 90421), @Estado='0', @Usuario=NULL (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+
+        UPDATE Noticia SET Titulo = @Titulo, Descripcion = @Descripcion, Imagen = @Imagen, Estado  = @Estado , Usuario  = @Usuario WHERE Id = @Id;
+2025-01-30 01:26:51.031 -06:00 [ERR] Failed executing DbCommand (21ms) [Parameters=[@Id='4', @Titulo='Nuevas Cabinas Enormes' (Nullable = false) (Size = 22), @Descripcion='Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes. Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes.' (Nullable = false) (Size = 219), @Imagen='0xFFD8FFE000104A46494600010101006000600000FFE102E04578696600004D4D...' (Nullable = false) (Size = 90421), @Estado='1', @Usuario=NULL (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+
+        UPDATE Noticia SET Titulo = @Titulo, Descripcion = @Descripcion, Imagen = @Imagen, Estado  = @Estado , Usuario  = @Usuario WHERE Id = @Id;
+2025-01-30 01:27:11.054 -06:00 [ERR] Failed executing DbCommand (30ms) [Parameters=[@Id='4', @Titulo='Nuevas Cabinas Enormes' (Nullable = false) (Size = 22), @Descripcion='Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes. Informamos que estaremos construyendo unas grandiosas cabinas nuevas para la comodidad de nuestros huespedes.' (Nullable = false) (Size = 219), @Imagen='0xFFD8FFE000104A46494600010101006000600000FFE102E04578696600004D4D...' (Nullable = false) (Size = 90421), @Estado='1', @Usuario=NULL (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+
+        UPDATE Noticia SET Titulo = @Titulo, Descripcion = @Descripcion, Imagen = @Imagen, Estado  = @Estado , Usuario  = @Usuario WHERE Id = @Id;

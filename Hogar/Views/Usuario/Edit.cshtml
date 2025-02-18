@@ -1,0 +1,421 @@
+﻿@model Hogar.Application.DTOs.UsuarioDTO
+
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+
+<div class="container py-5">
+    <div class="card shadow-lg">
+        <div class="card-header  text-white" style="background-color: #96B012;">
+            <h2 class="text-center mb-0">Editar Usuario</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" asp-antiforgery="true" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Id" type="hidden" />
+
+                <div class="row">
+                    <!-- Sección Izquierda -->
+                    <div class="col-md-6">
+                        <!-- Nombre -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Nombre" class="form-label fw-bold">
+                                <i class="fas fa-user"></i> Nombre
+                            </label>
+                            <input asp-for="Nombre" id="Nombre"class="form-control" placeholder="Ingrese el nombre completo" style="max-width: 90%;" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <!-- Apellidos -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Apellidos" class="form-label fw-bold">
+                                <i class="fas fa-user"></i> Apellidos
+                            </label>
+                            <input asp-for="Apellidos" id="Apellidos" class="form-control" placeholder="Ingrese los apellidos" style="max-width: 90%;" />
+                            <span asp-validation-for="Apellidos" class="text-danger"></span>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Correo" class="form-label fw-bold">
+                                <i class="fas fa-envelope"></i> Correo Electrónico
+                            </label>
+                            <input asp-for="Correo" id="Correo"type="email" class="form-control" placeholder="usuario@ejemplo.com" style="max-width: 90%;" />
+                            <span asp-validation-for="Correo" class="text-danger"></span>
+                        </div>
+
+                        @if (Context.Session.GetString("UserId") == ViewBag.Id)
+                        {
+
+@* 
+                            <!-- Campo Contraseña -->
+                            <div class="mb-3">
+                                <label asp-for="Contraseña" class="form-label fw-bold">
+                                    <i class="fas fa-key me-2"></i> Contraseña
+                                </label>
+                                <input asp-for="Contraseña" class="form-control" type="password"
+                                       placeholder="Ingrese la contraseña" style="max-width: 90%;"
+                                       value="********" />
+                                <span asp-validation-for="Contraseña" class="text-danger"></span>
+                            </div>
+
+ *@
+                            <!-- Campo Contraseña -->
+                            <div class="mb-3">
+                                <label asp-for="Contraseña" class="form-label fw-bold">
+                                    <i class="fas fa-key me-2"></i>Contraseña
+                                </label>
+                                <div class="input-group">
+                                    <input asp-for="Contraseña"  class="form-control" id="password" type="password"
+                                           placeholder="Ingrese la contraseña" style="max-width: 90%;"
+                                           value="********" /> <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span asp-validation-for="Contraseña" class="text-danger"></span>
+                            </div>
+                        
+                        }
+
+                    </div>
+
+                    <!-- Sección Derecha -->
+                    <div class="col-md-6">
+                       
+                  
+
+                        @if ( ViewBag.Id != Context.Session.GetString("UserId"))
+                        {
+                            @if (ViewBag.Id != "0")
+                            {
+                        <!-- Estado -->
+                        <div class="form-group mb-3">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-toggle-on"></i> Estado
+                            </label>
+                            <div class="form-check">
+                                <input type="radio" asp-for="Estado" value="1" id="radioActivo" class="form-check-input" />
+                                <label class="form-check-label" for="radioActivo">Activo</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" asp-for="Estado" value="0" id="radioInactivo" class="form-check-input" />
+                                <label class="form-check-label" for="radioInactivo">Inactivo</label>
+                            </div>
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+                            }
+                        }
+                        <!-- Tipo (Rol) -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Tipo" class="form-label fw-bold">
+                                <i class="fas fa-user-tag"></i> Rol
+                            </label>
+                            @Html.DropDownListFor(model => model.TipoNavigation.Id,
+                                     new SelectList(ViewBag.ListRol, "Id", "Descripcion"),
+                                     "Seleccione un rol",
+                                     new { @class = "form-select", id = "RolId" })
+                            <span asp-validation-for="TipoNavigation.Id" class="text-danger"></span>
+                        </div>
+                 
+                    
+                        <!-- Contraseña (oculta en edición) -->
+                        <div class="form-group" style="opacity:100%">
+                            <input asp-for="Contraseña2" type="hidden" class="form-control" />
+                            <span asp-validation-for="Contraseña2" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                     
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="IndexAdmin" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Regresar
+                    </a>
+                    <button type="submit" class="btn btn-primary" style="background-color: #96B012;">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Mostrar/Ocultar contraseña
+            document.addEventListener("DOMContentLoaded", function () {
+                const passwordInput = document.getElementById("password");
+                const toggleButton = document.getElementById("togglePassword");
+
+                toggleButton.addEventListener("mousedown", function () {
+                    passwordInput.type = "text";
+                    toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                });
+
+                document.addEventListener("mouseup", function () {
+                    passwordInput.type = "password";
+                    toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+                });
+
+                toggleButton.addEventListener("mouseleave", function () {
+                    passwordInput.type = "password";
+                    toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+                });
+            });
+
+            // Validación de ID duplicado
+            $("#Id").on("blur", function () {
+                var idIngresado = $(this).val();
+                if (idIngresado) {
+                    $.get("/Usuario/VerificarIdExiste", { id: idIngresado }, function (data) {
+                        if (data) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ID Duplicado',
+                                text: 'El ID ingresado ya existe. Por favor, elija otro.',
+                                toast: true,
+                                position: 'center',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true
+                            });
+
+                            $("#Id").addClass("is-invalid");
+                        } else {
+                            $("#Id").removeClass("is-invalid");
+                        }
+                    });
+                }
+            });
+
+            // Validación antes de enviar el formulario
+            $("form").submit(function (event) {
+                if (!$("form").valid()) {
+                    event.preventDefault();
+                    return;
+                }
+
+                var id = $("#Id").val();
+                var nombre = $("#Nombre").val();
+
+                var apellidos = $("#Apellidos").val();
+                var correo = $("#Correo").val();
+                var contraseña = $("#password").val();
+                var tipo = $("#RolId").val();
+
+                if (!id || id.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar un ID.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!nombre || nombre.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar un nombre.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+
+                if (!apellidos || apellidos.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar los apellidos.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+                if (!correo || correo.trim() === "") {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe ingresar un correo.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+
+          
+
+                if (!tipo) {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Validación requerida',
+                        text: 'Debe seleccionar un tipo de usuario.',
+                        toast: true,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true
+                    });
+                    return;
+                }
+            });
+        });
+    </script>
+}
+
+
+@* 
+@section Scripts {
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordInput = document.getElementById("password");
+            const toggleButton = document.getElementById("togglePassword");
+
+            toggleButton.addEventListener("mousedown", function () {
+                passwordInput.type = "text";
+                toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            });
+
+            toggleButton.addEventListener("mouseup", function () {
+                passwordInput.type = "password";
+                toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+            });
+
+            toggleButton.addEventListener("mouseleave", function () {
+                passwordInput.type = "password";
+                toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+            });
+        });
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // // Maneja la selección de radio buttons para el estado
+        // $("input[name='Estado']").change(function () {
+        //     if ($("#radioActivo").is(":checked")) {
+        //         $("#radioInactivo").prop("disabled", true);
+        //     } else {
+        //         $("#radioInactivo").prop("disabled", false);
+        //     }
+        // });
+
+
+
+        // SweetAlert para validación personalizada
+        $("form").submit(function (event) {
+            const id = $("#Id").val();
+            const nombre = $("#Nombre").val();
+            const apellido = $("#Apellidos").val();
+            const correo = $("#Correo").val();
+            const direccion = $("#Direccion").val();
+            const rol = $("#RolId").val();
+
+  
+            // Validar que se ingrese un nombre
+            if (!nombre || nombre.trim() === "") {
+                event.preventDefault(); // Evita el envío del formulario
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'Debe ingresar un nombre.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return; // Detiene la ejecución
+            }
+
+            // Validar que se ingrese un nombre
+            if (!apellido || apellido.trim() === "") {
+                event.preventDefault(); // Evita el envío del formulario
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'Debe ingresar los apellidos.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return; // Detiene la ejecución
+            }
+
+            // Validar que se ingrese un correo
+            if (!correo || correo.trim() === "") {
+                event.preventDefault(); // Evita el envío del formulario
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'Debe ingresar un correo.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return; // Detiene la ejecución
+            }
+
+
+ 
+ 
+            if (id != "0"{
+
+            // Validar que se establezca el tipo de usuario
+            if (!rol || rol === "0" || rol == "Seleccione un rol") {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validación requerida',
+                    text: 'Debe establecer un tipo de usuario.',
+                    toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+                return;
+            }
+            }
+        });
+    </script>
+}
+ *@

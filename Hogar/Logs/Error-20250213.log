@@ -1,0 +1,57 @@
+2025-02-13 00:01:47.407 -06:00 [ERR] 
+EventId :1986-250213120147
+ErrorList :Value cannot be null. (Parameter 'items')
+StackTrace :   at System.ArgumentNullException.Throw(String paramName)
+   at CallSite.Target(Closure, CallSite, Type, Object, String, String)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at AspNetCoreGeneratedDocument.Views_Usuario_Create.<ExecuteAsync>b__31_0()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Views_Usuario_Create.ExecuteAsync() in D:\Documents\UTN\TCU\Proyecto\Hogar V5\Hogar\Hogar\Views\Usuario\Create.cshtml:line 4
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Hogar.Web.Middleware.ErrorHandlingMiddleware.Invoke(HttpContext context) in D:\Documents\UTN\TCU\Proyecto\Hogar V5\Hogar\Hogar\Middleware\ErrorHandlingMiddleware.cs:line 21
+
+2025-02-13 00:17:00.257 -06:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@Id='2' (Nullable = false) (Size = 1), @Nombre='Fabian' (Nullable = false) (Size = 6), @Apellidos='Lopez Rodriguez' (Nullable = false) (Size = 15), @Correo='enriquefabianramirezramos@gmail.com' (Nullable = false) (Size = 35), @Contrase?a='$2a$11$NcaheA80jCHrhw5T97vbButCSxtyrhzGEiT7pMJfrI6p8zYapEeRO' (Nullable = false) (Size = 60), @Tipo='1', @Estado='1'], CommandType='"Text"', CommandTimeout='30']
+
+        INSERT INTO Usuario (Id, Nombre, Apellidos, Correo, Contrase?a, Tipo, Estado) 
+        VALUES (@Id, @Nombre, @Apellidos, @Correo, @Contrase?a, @Tipo, @Estado);
+2025-02-13 00:17:04.639 -06:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[@Id='2' (Nullable = false) (Size = 1), @Nombre='Fabian' (Nullable = false) (Size = 6), @Apellidos='Lopez Rodriguez' (Nullable = false) (Size = 15), @Correo='enriquefabianramirezramos@gmail.com' (Nullable = false) (Size = 35), @Contrase?a='$2a$11$P3MDoUuShqy6rWUukFF8xuLa8evI.CRy.KCCBKquV2PiGhqdcFWi2' (Nullable = false) (Size = 60), @Tipo='1', @Estado='1'], CommandType='"Text"', CommandTimeout='30']
+
+        INSERT INTO Usuario (Id, Nombre, Apellidos, Correo, Contrase?a, Tipo, Estado) 
+        VALUES (@Id, @Nombre, @Apellidos, @Correo, @Contrase?a, @Tipo, @Estado);
+2025-02-13 00:17:19.364 -06:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@Id='2' (Nullable = false) (Size = 1), @Nombre='Fabian' (Nullable = false) (Size = 6), @Apellidos='Lopez Rodriguez' (Nullable = false) (Size = 15), @Correo='enriquefabianramirezramos@gmail.com' (Nullable = false) (Size = 35), @Contrase?a='$2a$11$WEeTx9js/.6O3ITuEBqBKuNz83mdvmhvOO2NeYIaAHMxGAKAWwV1u' (Nullable = false) (Size = 60), @Tipo='1', @Estado='1'], CommandType='"Text"', CommandTimeout='30']
+
+        INSERT INTO Usuario (Id, Nombre, Apellidos, Correo, Contrase?a, Tipo, Estado) 
+        VALUES (@Id, @Nombre, @Apellidos, @Correo, @Contrase?a, @Tipo, @Estado);
+2025-02-13 00:17:34.538 -06:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[@Id='0' (Nullable = false) (Size = 1), @Nombre='123' (Nullable = false) (Size = 3), @Apellidos='123' (Nullable = false) (Size = 3), @Correo='123' (Nullable = false) (Size = 3), @Contrase?a='$2a$11$0K70HpQdEB9YIXA0orPLheEnY.EgvMADzbK0I.UlpZG.kvRUjlya2' (Nullable = false) (Size = 60), @Tipo='1', @Estado='1'], CommandType='"Text"', CommandTimeout='30']
+
+        INSERT INTO Usuario (Id, Nombre, Apellidos, Correo, Contrase?a, Tipo, Estado) 
+        VALUES (@Id, @Nombre, @Apellidos, @Correo, @Contrase?a, @Tipo, @Estado);
+2025-02-13 00:22:20.810 -06:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@Id='999' (Nullable = false) (Size = 3), @Nombre='Fabian' (Nullable = false) (Size = 6), @Apellidos='Lopez Rios' (Nullable = false) (Size = 10), @Correo='enriquefabianramirezramos@gmail.com' (Nullable = false) (Size = 35), @Contrase?a='$2a$11$rcp0TsolW/yvOrSIe9bmfefQiGIYmo9.cmEWUOrOhTjcjiwH4YSkK' (Nullable = false) (Size = 60), @Tipo='1', @Estado='1'], CommandType='"Text"', CommandTimeout='30']
+
+        INSERT INTO Usuario (Id, Nombre, Apellidos, Correo, Contrase?a, Tipo, Estado) 
+        VALUES (@Id, @Nombre, @Apellidos, @Correo, @Contrase?a, @Tipo, @Estado);

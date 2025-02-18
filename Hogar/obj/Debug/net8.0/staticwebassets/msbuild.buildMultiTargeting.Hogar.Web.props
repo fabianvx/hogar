@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Hogar.Web.props" />
+</Project>
