@@ -33,7 +33,7 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-var builder = WebApplication.CreateBuilder(args);
+ 
 
 // Configuración de la base de datos
 builder.Services.AddDbContext<HogarContext>(options =>
