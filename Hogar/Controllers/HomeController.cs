@@ -69,10 +69,10 @@ namespace Hogar.Controllers
         public async Task<IActionResult> EnviarConsulta(string name, string email, string subject, string message)
         {
             var body = $"Nombre: {name}\nCorreo: {email}\nAsunto: {subject}\n\nMensaje: {message}";
-            //Este es el correo al que llegarÌa la consulta
-            await _ServiceEmail.SendEmailAsync("recepcionjafethjimenez@ice.co.cr", subject, body);
+            //Este es el correo al que llegar√≠a la consulta
+            await _ServiceEmail.SendEmailAsync("hogarjafethjimenez@gmail.com", subject, body);
 
-            // Puedes redirigir a una p·gina de agradecimiento o mostrar un mensaje
+            // Puedes redirigir a una p√°gina de agradecimiento o mostrar un mensaje
             TempData["MensajeExito"] = "Tu consulta ha sido enviada exitosamente.";
             return RedirectToAction("Contacto");
         }
