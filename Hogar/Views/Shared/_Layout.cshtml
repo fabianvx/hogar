@@ -60,7 +60,7 @@
                         <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Servicios">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Nosotros">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Noticia" asp-action="Index">Noticias</a></li>
+          
                         <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contacto">Contacto</a></li>
                         @if (Context.Session.GetString("UserType") == "1")
                         {
@@ -154,12 +154,10 @@
               <!-- Logo -->
                     <div class="d-flex align-items-center">
                         <!-- Botones de redes sociales -->
-                        <a href="#" class="mx-2 text-white">
+                        <a href="https://www.facebook.com/HogarAncianosJafethJimenez/" class="mx-2 text-white">
                             <i class="bi bi-facebook"></i>
                         </a>
-                        <a href="#" class="mx-2 text-white">
-                            <i class="bi bi-instagram"></i>
-                        </a>
+               
                 @*         <a href="#" class="mx-2" onclick="translateToEnglish(); return false;">
                             <img src="/images/flag.png" alt="Inglés" style="width: 24px; height: 24px; border-radius: 50%;">
                         </a> *@
@@ -171,14 +169,7 @@
                             <img src="/images/LogoBlanco.png" alt="Logo" style="height: 90px;">
                         </a>
 
-                            @if (Context.Session.GetString("UserType") != "1")
-                        {
-                            <a class="nav-link text-white" asp-area="" asp-controller="Account" asp-action="Login">
-                                <i class="fas fa-sign-in-alt"></i> Ingresar
-                            </a>
-                        }
-                        else
-                        {
+                    
                    
 
                             <form asp-controller="Account" asp-action="Logout" method="post">
@@ -186,7 +177,7 @@
                                     <i class="fas fa-sign-in-alt"></i> Cerrar Sesión
                                 </button>
                             </form>
-                        }
+                    
                     </div>
                 </div>
             </div>
